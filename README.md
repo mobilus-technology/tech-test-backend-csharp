@@ -5,7 +5,7 @@
 - A prova consiste na implementação de uma API em C# seguindo os requisitos e critérios estabelecidos abaixo.
 - Utilize o formato MarkDown para formatar todas as informações que são relevantes para o projeto.
 - O candidato deve realizar as tarefas descritas na prova e enviar o código-fonte completo junto com um arquivo explicativo em Markdown descrevendo as soluções adotadas, no prazo de 7 dias para o e-mail recrutamento@mobilus.com.br com o assunto "Vaga Desenvolvedor - [seu nome]".
-- Faça um fork privado do presente repositório e adicione o usuário "alexmontanha@mobilus.com.br".
+- Faça um fork privado do presente repositório e adicione o usuário "alexmontanha@mobilus.com.br" como contribuidor do repositório.
 
 ## Descrição do Projeto
 
@@ -25,11 +25,11 @@ A empresa "Mobilus Tecnologia" está em busca de um desenvolvedor de software al
 1. Implemente uma API em C# que realize operações de CRUD (Create, Read, Update, Delete) completo para um recurso chamado "Produto". O "Produto" deve conter os seguintes atributos: Id (identificador único), Nome, Preço, Quantidade em Estoque, e Data de Criação. Os endpoints esperados são:
 
 ``` http 
-   - `POST /api/produtos`: Cria um novo produto.
-   - `GET /api/produtos`: Retorna a lista de todos os produtos.
-   - `GET /api/produtos/{id}`: Retorna os detalhes de um produto específico.
-   - `PUT /api/produtos/{id}`: Atualiza os dados de um produto existente.
-   - `DELETE /api/produtos/{id}`: Remove um produto do sistema.
+   `POST /api/produtos`: Cria um novo produto.
+   `GET /api/produtos`: Retorna a lista de todos os produtos.
+   `GET /api/produtos/{id}`: Retorna os detalhes de um produto específico.
+   `PUT /api/produtos/{id}`: Atualiza os dados de um produto existente.
+   `DELETE /api/produtos/{id}`: Remove um produto do sistema.
 ```
 
 2. Implemente uma regra de validação para o atributo "Preço" do produto. O preço não pode ser negativo, e o sistema deve retornar uma mensagem de erro apropriada em caso de tentativa de criação ou atualização de um produto com preço inválido.
