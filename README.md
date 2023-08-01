@@ -13,7 +13,7 @@
 
 ## Descrição do Projeto
 
-A empresa "Mobilus Tecnologia" está em busca de um desenvolvedor de software altamente qualificado para implementar uma API em C#. A API deve oferecer um CRUD completo, conter regras de validação e campos calculados, e utilizar três repositórios distintos: Arquivo texto, Banco de dados SQL e Banco NoSQL.
+A empresa __Mobilus Tecnologia__ está em busca de um desenvolvedor de software altamente qualificado para implementar uma API em C#. A API deve oferecer um CRUD completo, conter regras de validação e campos calculados, e utilizar três repositórios distintos: Arquivo texto, Banco de dados SQL e Banco NoSQL.
 
 ## Requisitos Técnicos
 
@@ -28,12 +28,14 @@ A empresa "Mobilus Tecnologia" está em busca de um desenvolvedor de software al
 
 1. Implemente uma API em C# que realize operações de CRUD (Create, Read, Update, Delete) completo para um recurso chamado "Produto". O "Produto" deve conter os seguintes atributos: Id (identificador único), Nome, Preço, Quantidade em Estoque, e Data de Criação. Os endpoints esperados são:
 
-``` http 
-   `POST /api/produtos`: Cria um novo produto.
-   `GET /api/produtos`: Retorna a lista de todos os produtos.
-   `GET /api/produtos/{id}`: Retorna os detalhes de um produto específico.
-   `PUT /api/produtos/{id}`: Atualiza os dados de um produto existente.
-   `DELETE /api/produtos/{id}`: Remove um produto do sistema.
+
+
+``` html
+   POST /api/produtos: Cria um novo produto.
+   GET /api/produtos: Retorna a lista de todos os produtos.
+   GET /api/produtos/{id}: Retorna os detalhes de um produto específico.
+   PUT /api/produtos/{id}: Atualiza os dados de um produto existente.
+   DELETE /api/produtos/{id}: Remove um produto do sistema.
 ```
 
 2. Implemente uma regra de validação para o atributo "Preço" do produto. O preço não pode ser negativo, e o sistema deve retornar uma mensagem de erro apropriada em caso de tentativa de criação ou atualização de um produto com preço inválido.
