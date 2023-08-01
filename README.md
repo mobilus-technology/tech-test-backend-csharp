@@ -3,9 +3,13 @@
 ## Instruções
 
 - A prova consiste na implementação de uma API em C# seguindo os requisitos e critérios estabelecidos abaixo.
-- Utilize o formato MarkDown para formatar todas as informações que são relevantes para o projeto.
-- O candidato deve realizar as tarefas descritas na prova e enviar o código-fonte completo junto com um arquivo explicativo em Markdown descrevendo as soluções adotadas, no prazo de 7 dias para o e-mail recrutamento@mobilus.com.br com o assunto "Vaga Desenvolvedor - [seu nome]".
 - Faça um fork privado do presente repositório e adicione o usuário "alexmontanha@mobilus.com.br" como contribuidor do repositório.
+- Utilize o formato MarkDown para formatar todas as informações que são relevantes para o projeto.
+- O candidato deve realizar as tarefas descritas na prova e garantir que o repositório com o texto contenha o código-fonte completo junto com um arquivo explicativo em Markdown descrevendo as soluções adotadas.
+- O candidato tem o prazo de 7 dias para finalizar.
+- Ao finalizar, o candidato deve enviar um e-mail recrutamento@mobilus.com.br com o assunto "Vaga Desenvolvedor - [seu nome]", informando que finalizou o teste.
+- Todas as alterações feitas após o envio do e-mail serão desconsideradas.
+
 
 ## Descrição do Projeto
 
