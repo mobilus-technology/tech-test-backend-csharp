@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "mJNtoExvlpl2qIzGU7QETwOkNP7xyXQdc9DzeQPPHOs6+es6+fOWx18Jw2/ZOsP19nyYUyC/v0fuIyK1lp06/A==",
+  "success": true,
+  "projectFilePath": "C:\\Projetos\\TechTest\\TechTest.Application\\TechTest.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Marcos Aurelio\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Marcos Aurelio\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Marcos Aurelio\\.nuget\\packages\\mongodb.bson\\2.21.0\\mongodb.bson.2.21.0.nupkg.sha512",
+    "C:\\Users\\Marcos Aurelio\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\Marcos Aurelio\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
