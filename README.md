@@ -41,11 +41,11 @@ docker-compose up -d
 
 5. Você pode usar uma ferramenta como o Postman ou curl para interagir com a API. Aqui estão alguns exemplos de endpoints disponíveis:
 
-- GET http://localhost:5000/api/products - Lista todos os produtos.
-- GET http://localhost:5000/api/products/{id} - Busca um produto pelo ID.
-- POST http://localhost:5000/api/products - Cria um novo produto.
-- PUT http://localhost:5000/api/products/{id} - Atualiza um produto existente pelo ID.
-- DELETE http://localhost:5000/api/products/{id} - Exclui um produto pelo ID.
+- GET http://localhost:47662/api/products - Lista todos os produtos.
+- GET http://localhost:47662/api/products/{id} - Busca um produto pelo ID.
+- POST http://localhost:47662/api/products - Cria um novo produto.
+- PUT http://localhost:47662/api/products/{id} - Atualiza um produto existente pelo ID.
+- DELETE http://localhost:47662/api/products/{id} - Exclui um produto pelo ID.
 
 ## O projeto possui a seguinte estrutura de diretórios:
 
