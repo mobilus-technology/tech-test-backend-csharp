@@ -1,67 +1,83 @@
-# Prova Técnica - Desenvolvedor de Software Backend C#
+# WebApiProduct
 
-## Instruções
+Este é um exemplo de aplicação que demonstra uma API REST simples para gerenciar produtos. A aplicação permite criar, atualizar, buscar e excluir produtos, armazenando-os em bancos de dados SQL Server e MongoDB simultaneamente.
 
-- A prova consiste na implementação de uma API em C# seguindo os requisitos e critérios estabelecidos abaixo.
-- Faça um fork privado do presente repositório e adicione o usuário "alexmontanha@mobilus.com.br" como contribuidor do repositório.
-- Utilize o formato MarkDown para formatar todas as informações que são relevantes para o projeto.
-- O candidato deve realizar as tarefas descritas na prova e garantir que o repositório com o texto contenha o código-fonte completo junto com um arquivo explicativo em Markdown descrevendo as soluções adotadas.
-- O candidato tem o prazo de 7 dias para finalizar.
-- Ao finalizar, o candidato deve enviar um e-mail recrutamento@mobilus.com.br com o assunto "Vaga Desenvolvedor - [seu nome]", informando que finalizou o teste.
-- Todas as alterações feitas após o envio do e-mail serão desconsideradas.
+## Requisitos
 
+Certifique-se de ter instalado o seguinte software:
 
-## Descrição do Projeto
+- [.NET Core SDK](https://dotnet.microsoft.com/download)
+- [Docker](https://www.docker.com/get-started)
 
-A empresa __Mobilus Tecnologia__ está em busca de um desenvolvedor de software altamente qualificado para implementar uma API em C#. A API deve oferecer um CRUD completo, conter regras de validação e campos calculados, e utilizar três repositórios distintos: Arquivo texto, Banco de dados SQL e Banco NoSQL.
+## Instruções de Uso
 
-## Requisitos Técnicos
+1. Clone o repositório para a sua máquina:
 
-- Linguagem de Programação: C#
-- Desenvolvimento Backend
-- Bancos de Dados SQL
-- Padrões de Projeto
-- Princípios do SOLID
-- Testes Unitários usando MSTests
-
-## Tarefas
-
-1. Implemente uma API em C# que realize operações de CRUD (Create, Read, Update, Delete) completo para um recurso chamado "Produto". O "Produto" deve conter os seguintes atributos: Id (identificador único), Nome, Preço, Quantidade em Estoque, e Data de Criação. Os endpoints esperados são:
-
-
-
-``` html
-   POST /api/produtos: Cria um novo produto.
-   GET /api/produtos: Retorna a lista de todos os produtos.
-   GET /api/produtos/{id}: Retorna os detalhes de um produto específico.
-   PUT /api/produtos/{id}: Atualiza os dados de um produto existente.
-   DELETE /api/produtos/{id}: Remove um produto do sistema.
+```bash
+git clone https://github.com/victorfdelima/web-api-product.git
+cd web-api-product
 ```
 
-2. Implemente uma regra de validação para o atributo "Preço" do produto. O preço não pode ser negativo, e o sistema deve retornar uma mensagem de erro apropriada em caso de tentativa de criação ou atualização de um produto com preço inválido.
+2. No terminal siga esse fluxo para subir os Containers dos bancos
 
-3. Adicione um campo calculado ao produto chamado "Valor Total" que represente o valor total do produto em estoque (Preço x Quantidade em Estoque). Esse campo deve ser retornado na consulta de detalhes do produto.
+```bash
+./start_containers.sh
+```
+Após os containers do banco subirem
 
-4. Utilize três repositórios distintos para armazenar os dados dos produtos:
-   - 4.1) Repositório de Arquivo Texto: Os dados devem ser armazenados em um arquivo texto com formato adequado. Implemente as operações de leitura e escrita nesse repositório.
-   - 4.2) Repositório de Banco de Dados SQL: Utilize um banco de dados SQL de sua escolha (por exemplo, SQL Server, MySQL, PostgreSQL) para implementar as operações de persistência.
-   - 4.3) Repositório de Banco NoSQL: Utilize um banco de dados NoSQL de sua escolha (por exemplo, MongoDB, Cassandra, Couchbase) para implementar as operações de persistência.
+- Volte ao terminal e dê um dotnet ef add InitialMigrations
 
-## Critérios de Avaliação
+- No terminal dê um dotnet ef database update (isso fará com que as tabelas sejam criada no banco)
 
-- API implementada, rodando e com uma forma de acesso para teste em produção.
-- Implementação correta e funcional da API com todas as operações CRUD.
-- Correta aplicação da regra de validação para o atributo "Preço".
-- Cálculo correto do campo "Valor Total".
-- Implementação dos três repositórios distintos com sucesso na persistência dos dados.
-- Organização e clareza do código.
-- Utilização adequada dos princípios do SOLID.
-- Criação de testes unitários para as principais funcionalidades da API.
+3. No terminal ainda complete o comando 
+```bash
+docker-compose up -d
+```
+- Isso fará com que o container da API suba para a mesma rede que está os bancos e a API funcione.
 
-## Observações
+4. Agora, a aplicação está em execução. A API REST estará disponível em http://localhost:47662
 
-- O candidato tem liberdade para escolher a estrutura do projeto, frameworks e bibliotecas adicionais que julgar adequados para a realização da prova.
-- É importante seguir as boas práticas de desenvolvimento e manter um código limpo e legível.
-- Inclua no arquivo explicativo em Markdown informações sobre como executar o projeto, incluindo a configuração dos bancos de dados (caso necessário) e a execução dos testes unitários.
+- Você pode conferir a documentação da API em http://localhost:47662/swagger
 
-Boa prova e sucesso no desafio! Em caso de dúvidas, entre em contato pelo e-mail recrutamento@mobilus.com.br.
+5. Você pode usar uma ferramenta como o Postman ou curl para interagir com a API. Aqui estão alguns exemplos de endpoints disponíveis:
+
+- GET http://localhost:5000/api/products - Lista todos os produtos.
+- GET http://localhost:5000/api/products/{id} - Busca um produto pelo ID.
+- POST http://localhost:5000/api/products - Cria um novo produto.
+- PUT http://localhost:5000/api/products/{id} - Atualiza um produto existente pelo ID.
+- DELETE http://localhost:5000/api/products/{id} - Exclui um produto pelo ID.
+
+## O projeto possui a seguinte estrutura de diretórios:
+
+- **Controllers:** Contém os controladores da API.
+- **Context:** Fornece o contexto para o banco de dados SQL Server & Implementações para integração com diferentes tipos de bancos de dados.
+- **Interface:** Contém as interfaces para repositórios e serviços.
+- **Middleware:** Implementações intermediárias para gerenciamento de repositórios.
+- **Models:** Definição das classes de modelo.
+- **Repository:** Implementações dos repositórios para cada tipo de armazenamento.
+- **Service:** Implementações dos serviços de negócios.
+
+## Diretórios e Métodos
+
+- **Controllers:** Contêm os controladores da API que definem os endpoints
+- **Context:** Fornecem o contexto do banco de dados SQL Server & Implementações intermediárias para gerenciar os repositórios de diferentes bancos de dados..
+- **Interface:** Define interfaces para repositórios e serviços.
+- **Middleware:** Implementações intermediárias que fazem a interação entre os repositórios de diferentes bancos de dados.
+- **Models:** Definição das classes de modelo para representar produtos.
+- **Repository:** Implementações dos repositórios de dados para cada tipo de armazenamento.
+- **Service:** Implementações dos serviços de negócios que contêm a lógica de manipulação dos produtos.
+
+## Princípios SOLID
+
+Este projeto adota os princípios SOLID para escrever um código limpo, de fácil manutenção e expansão:
+
+- **S (Princípio da Responsabilidade Única):** Cada classe e método possui uma única responsabilidade claramente definida, facilitando a manutenção e evolução.
+- **O (Princípio do Aberto/Fechado):** O código está aberto para extensões, mas fechado para modificações. Isso é alcançado através da separação de interfaces e implementações.
+- **L (Princípio da Substituição de Liskov):** As classes derivadas podem ser usadas como substitutas de suas classes base sem afetar a funcionalidade esperada.
+- **I (Princípio da Segregação de Interfaces):** As interfaces são segregadas para atender às necessidades específicas de cada cliente, evitando interfaces monolíticas.
+- **D (Princípio da Inversão de Dependência):** As dependências são injetadas em vez de serem criadas internamente, permitindo maior flexibilidade e testabilidade.
+
+## Personalizações
+
+- Personalize as configurações de conexão com bancos de dados no arquivo `docker-compose.yml` e no arquivo `appsettings.json`.
+

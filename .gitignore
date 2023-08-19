@@ -1,0 +1,30 @@
+# .NET Core
+bin/
+obj/
+*.user
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# Compiled files
+*.dll
+*.exe
+*.pdb
+
+# User-specific files
+*.suo
+*.userprefs
+*.sln.docstates
+
+# Dependency folders
+packages/
+node_modules/
+
+# Mac
+.DS_Store
+
+# Docker
+docker-compose.override.yml
