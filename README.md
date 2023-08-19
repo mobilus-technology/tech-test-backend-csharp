@@ -81,3 +81,6 @@ Este projeto adota os princípios SOLID para escrever um código limpo, de fáci
 
 - Personalize as configurações de conexão com bancos de dados no arquivo `docker-compose.yml` e no arquivo `appsettings.json`.
 
+# OBS:
+
+- Caso dê erro na execução, apague a pasta de testes, (Não se coloca teste no projeto, somente numa solução).
